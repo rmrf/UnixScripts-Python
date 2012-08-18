@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 """
-    Author: Ryan Qian
+    Author: Qian, Ryan
     Date: 18-Aug-2012
 
     This script is used for generate Nagios report for last7days
