@@ -29,4 +29,4 @@ fi
 
 # install 
 echo "Install Packages..... "
-sudo pkg install autoconf gcc-45 unrar setuptools-26
+sudo pkg install autoconf gcc-45 unrar setuptools-26 system/header

@@ -5,6 +5,8 @@
     Date: 18-Aug-2012
 
     This script is used for generate Nagios report for last7days
+    Then generate PDF report file
+
     usage:
         NagiosReport.py <username> <password>
 

@@ -1,8 +1,13 @@
 #!/usr/bin/python
 """
+    Author: Qian, Ryan
+    Date: 18-Sep-2012
+
     This script is used for generate Nagios report for last24hours
+    then update /tmp/nagios_report.log file, which used by Splunk Fwder
+
     usage:
-        NagiosReport.py
+        Directly run it
 
 
 """
@@ -11,7 +16,6 @@ import re
 import base64
 import urllib2
 import datetime
-#import xhtml2pdf.pisa as pisa
 
 
 # our Nagios host need auth to get data from cgi
