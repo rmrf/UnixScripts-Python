@@ -42,7 +42,7 @@ echo "###############################"
 echo "Install essential Packages..... "
 echo "###############################"
 sudo pkg update
-sudo pkg install lftp autoconf gcc-45 unrar setuptools-26 system/header subversion cvs
+sudo pkg install lftp autoconf gcc-45 unrar setuptools-26 system/header cvs developer/versioning/subversion
 
 
 # Grant root login
@@ -53,7 +53,7 @@ echo "###############################"
 sudo perl  -pi -e 's/^root::::type=role$/root::::type=normal/'  /tmp/user_attr
 sudo perl  -pi -e 's/^PermitRootLogin.*$/PermitRootLogin yes/' /etc/ssh/sshd_config
 
-sudo vcadm restart ssh
+sudo svcadm restart ssh
 
 
 # install gmp from source,  pycrypto can't be install without this step.
