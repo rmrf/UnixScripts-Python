@@ -42,9 +42,43 @@ echo "###############################"
 echo "Install essential Packages, also some of Opencsw packages.... "
 echo "###############################"
 sudo pkg update
-sudo pkg install lftp autoconf gcc-45 unrar setuptools-26 system/header cvs developer/versioning/subversion unrar
-sudo pkgadd -d http://get.opencsw.org/now
-sudo pkgutil  -y -i vim CSWcoreutils
+sudo pkg install lftp autoconf unrar setuptools-26 system/header cvs developer/versioning/subversion git
+sudo pkg install -v \
+ pkg:/data/docbook \
+ pkg:/developer/astdev \
+ pkg:/developer/build/make \
+ pkg:/developer/build/onbld \
+ pkg:/developer/illumos-gcc \
+ pkg:/developer/gnu-binutils \
+ pkg:/developer/opensolaris/osnet \
+ pkg:/developer/java/jdk \
+ pkg:/developer/lexer/flex \
+ pkg:/developer/object-file \
+ pkg:/developer/parser/bison \
+ pkg:/developer/versioning/mercurial \
+ pkg:/library/glib2 \
+ pkg:/library/libxml2 \
+ pkg:/library/libxslt \
+ pkg:/library/nspr/header-nspr \
+ pkg:/library/perl-5/xml-parser \
+ pkg:/library/security/trousers \
+ pkg:/print/cups \
+ pkg:/print/filter/ghostscript \
+ pkg:/runtime/perl-510 \
+ pkg:/runtime/perl-510/extra \
+ pkg:/runtime/perl-510/module/sun-solaris \
+ pkg:/system/library/math/header-math \
+ pkg:/system/library/install \
+ pkg:/system/library/dbus \
+ pkg:/system/library/libdbus \
+ pkg:/system/library/libdbus-glib \
+ pkg:/system/library/mozilla-nss/header-nss \
+ pkg:/system/header \
+ pkg:/system/management/product-registry \
+ pkg:/system/management/snmp/net-snmp \
+ pkg:/text/gnu-gettext \
+ pkg:/library/python-2/python-extra-24 \
+ pkg:/web/server/apache-13
 
 cd ~; git clone https://github.com/rmrf/BashEnv.git
 mv ~/.bash_profile ~/.bash_profleBAK
