@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 #
-# Send me email when Nexus 4 get rid if "Sold out" status
+# Send me email when Nexus 4 get rid of "Sold out" status
 #
 
 import urllib2
