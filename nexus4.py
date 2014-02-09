@@ -11,20 +11,21 @@ from email.mime.text import MIMEText
 ctime = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))
 it_ready = "Google Nexus 4 is Ready! %s" % ctime
 me = "money@eyelu.com"
-you = "ryan.qian@gmail.com"
+you = ["ryan.qian@gmail.com", "yiting1998@gmail.com", "yoqian@ebay.com", "rmrf@163.com"]
 
 
 def emailit():
     print "%s doing the sending email..." % ctime
     mail_content = "Google Nexus 4 is Ready! %s" % ctime
     msg = MIMEText(mail_content)
+    myou  = ", ".join(you)
 
     msg['Subject'] = mail_content
     msg['From'] = me
-    msg['To'] = you
+    msg['To'] = myou
 
     s = smtplib.SMTP('localhost')
-    s.sendmail(me, [you], msg.as_string())
+    s.sendmail(me, you, msg.as_string())
     s.quit()
 
 
