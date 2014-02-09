@@ -21,6 +21,7 @@ PING_COUNT = 3
 non_pingable_ips = []
 non_reolvable_ips = []
 
+
 def usage():
     print
     print "Usage: find_free_ip.py <ip address>/<netmask> "
@@ -28,6 +29,7 @@ def usage():
     print "\t default netmask is 255.255.255.0 if not indicate"
     print "\t can also use 24, 21 as netmask "
     print
+
 
 def os_check():
     """ Support linux, sunos, macos
@@ -92,11 +94,10 @@ def reverse_check(ipaddr):
         return False
 
 
-
 def calculate_network(tgt_ipaddr):
     all_ips = []
     if '/' in tgt_ipaddr:
-        ip, netmask= tgt_ipaddr.split('/')
+        ip, netmask = tgt_ipaddr.split('/')
         if not netmask:
             netmask = '255.255.255.0'
     else:
@@ -109,8 +110,9 @@ def calculate_network(tgt_ipaddr):
 
     return all_ips
 
+
 def main():
-    if len(sys.argv) != 2 :
+    if len(sys.argv) != 2:
         usage()
         exit(1)
 
@@ -118,13 +120,12 @@ def main():
     os = os_check()
     all_ips = calculate_network(tgt_ipaddr)
 
-
     t_ping_list = []
     t_reverse_list = []
 
     for ip in all_ips:
         ping_cmd = ping_cmd_choose(os, ip)
-        #print ping_cmd
+        # print ping_cmd
         t_ping = threading.Thread(target=do_ping, args=(ping_cmd, ip))
         t_ping_list.append(t_ping)
 
@@ -141,8 +142,8 @@ def main():
     for thread in t_reverse_list:
             thread.join()
 
-    #print "Unpingable ip address:", non_pingable_ips
-    #print "UnResolvable ip address:", non_reolvable_ips
+    # print "Unpingable ip address:", non_pingable_ips
+    # print "UnResolvable ip address:", non_reolvable_ips
 
     free_ips = list(set(non_pingable_ips) & set(non_reolvable_ips))
     print "Free IPs inside network %s are:" % tgt_ipaddr
