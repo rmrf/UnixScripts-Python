@@ -54,7 +54,7 @@ def ping_cmd_choose(os, ipaddr):
     if os:
         if os == 'linux':
             ping_cmd = "/bin/ping -c %d %s " % (PING_COUNT, ipaddr)
-        elif os == 'sunos':
+        elif os == 'solaris':
             ping_cmd = "/usr/sbin/ping %s %d" % (ipaddr, PING_COUNT)
         elif os == 'macos':
             ping_cmd = "/sbin/ping -c %d %s" % (PING_COUNT, ipaddr)
